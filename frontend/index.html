@@ -11,7 +11,7 @@
     <script>
       async function callApi() {
         // In docker-compose, backend service name = backend
-        const res = await fetch("https://sample-backend-409285328475.asia-south1.run.app/");
+        const res = await fetch("https://sample-backend-409285328475.asia-south1.run.app/api/message");
         const data = await res.json();
         document.getElementById("output").innerText = JSON.stringify(data, null, 2);
       }
