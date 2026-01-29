@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Frontend</title>
+  </head>
+  <body>
+    <h1>Frontend Running ✅</h1>
+    <button onclick="callApi()">Call Backend</button>
+    <pre id="output"></pre>
+
+    <script>
+      async function callApi() {
+        // In docker-compose, backend service name = backend
+        const res = await fetch("http://backend:8080/api/message");
+        const data = await res.json();
+        document.getElementById("output").innerText = JSON.stringify(data, null, 2);
+      }
+    </script>
+  </body>
+</html>
